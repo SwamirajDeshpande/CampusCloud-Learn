@@ -2,7 +2,7 @@ import os
 import html
 import streamlit as st
 import firebase_admin
-from firebase_admin import credentials, firestor
+from firebase_admin import credentials, firestore
 @st.cache_resource
 def get_firestore_db():
     if not firebase_admin._apps:
