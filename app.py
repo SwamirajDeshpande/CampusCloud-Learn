@@ -684,15 +684,15 @@ elif page == "Share a Resource":
 
         if submit:
             if title.strip() and description.strip():
-            try:
-                resource = {
-                    "title": title.strip(),
-                    "subject": subject,
-                    "semester": semester,
-                    "kind": kind,
-                    "description": description.strip(),
-                    "logo": "https://cdn.simpleicons.org/book/64748B",
-                }
+                try:
+                    resource = {
+                        "title": title.strip(),
+                        "subject": subject,
+                        "semester": semester,
+                        "kind": kind,
+                        "description": description.strip(),
+                        "logo": "https://cdn.simpleicons.org/book/64748B",
+                    }
 
             db.collection("resources").add(resource)
 
