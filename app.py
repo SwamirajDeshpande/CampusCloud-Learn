@@ -683,20 +683,26 @@ elif page == "Share a Resource":
         )
 
         if submit:
-            if title.strip() and description.strip():
-                st.session_state.submitted_resources.append({
-                    "title": title.strip(),
-                    "subject": subject,
-                    "semester": semester,
-                    "kind": kind,
-                    "description": description.strip(),
-                    "logo": "https://cdn.simpleicons.org/book/64748B",
-                })
-                st.success(
-                    "Resource added to this session! Visit Dashboard to see it."
-                )
-            else:
-                st.error("Please complete both required fields.")
+    if title.strip() and description.strip():
+        try:
+            resource = {
+                "title": title.strip(),
+                "subject": subject,
+                "semester": semester,
+                "kind": kind,
+                "description": description.strip(),
+                "logo": "https://cdn.simpleicons.org/book/64748B",
+            }
+
+            db.collection("resources").add(resource)
+
+            st.success("Resource saved to the cloud successfully!")
+            st.rerun()
+
+        except Exception as e:
+            st.error(f"Could not save resource: {e}")
+    else:
+        st.error("Please complete both required fields.")
 
     st.caption(
         "Prototype note: submissions are stored temporarily in this session. "
