@@ -1,7 +1,32 @@
 import os
 import html
 import streamlit as st
+import firebase_admin
+from firebase_admin import credentials, firestor
+@st.cache_resource
+def get_firestore_db():
+    if not firebase_admin._apps:
+        cred = credentials.Certificate(
+            dict(st.secrets["firebase"])
+        )
+        firebase_admin.initialize_app(cred)
 
+    return firestore.client()
+
+db = get_firestore_db()
+
+try:
+    docs = db.collection("resources").stream()
+    resources = [doc.to_dict() for doc in docs]
+
+    st.success(f"Connected! Loaded {len(resources)} resources.")
+
+    for resource in resources:
+        st.write(resource["title"])
+
+except Exception as e:
+    st.error(f"Firestore error: {e}")
+    
 # =====================================================
 # PAGE CONFIGURATION
 # =====================================================
