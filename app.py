@@ -694,15 +694,15 @@ elif page == "Share a Resource":
                         "logo": "https://cdn.simpleicons.org/book/64748B",
                     }
 
-            db.collection("resources").add(resource)
+                    db.collection("resources").add(resource)
 
-            st.success("Resource saved to the cloud successfully!")
-            st.rerun()
+                    st.success("Resource saved to the cloud successfully!")
+                    st.rerun()
 
-        except Exception as e:
-            st.error(f"Could not save resource: {e}")
-    else:
-        st.error("Please complete both required fields.")
+                except Exception as e:
+                    st.error(f"Could not save resource: {e}")
+            else:
+                st.error("Please complete both required fields.")
 
     st.caption(
         "Prototype note: submissions are stored temporarily in this session. "
