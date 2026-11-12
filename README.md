@@ -211,7 +211,7 @@ Student | Computer Science and Engineering (AI & ML)
 Interested in cloud computing, artificial intelligence, machine learning, and software development.
 
 ---
-If you find this project interesting, consider starring the repository.
+⭐ If you find this project interesting, consider starring the repository.
 
 *CampusCloud Learn — Making academic resources easier to share and access.*
 
