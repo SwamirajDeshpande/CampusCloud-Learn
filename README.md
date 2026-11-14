@@ -206,7 +206,7 @@ These are proposed enhancements and are not necessarily part of the current impl
 
 **Swamiraj Deshpande**
 
-Student | Computer Science and Engineering (AI & ML)
+Student | Computer Science and Engineering (AI & ML) at VIT Pune
 
 Interested in cloud computing, artificial intelligence, machine learning, and software development.
 
